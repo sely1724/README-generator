@@ -19,7 +19,11 @@ const inquirer = require("inquirer");
 const markdownTemplate = require("./utils/generateMarkdown");
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(title, renderedMarkdown) {
+  fs.writeFile(title, renderedMarkdown, (err) =>
+    err ? console.error(err) : console.log("README generated")
+  );
+}
 
 // TODO: Create a function to initialize app
 //function init() {}f
@@ -84,23 +88,25 @@ inquirer
   ])
   .then((response) => {
     const title = response.questionsTitle;
-    const descr = response.questionsDescr;
-    const install = response.questionsInstall;
-    const usage = response.questionsUsage;
-    const license = response.questionsLicense;
-    const contrib = response.questionsContribution;
-    const testing = response.questionsTesting;
-    const userName = response.questionsGithubUser;
-    const email = response.questionsEmailAddress;
-    const tableofContents = [
-      "Description",
-      "Installation",
-      "Usage",
-      "License",
-      "Contribution",
-      "Testing",
-      "GitHub Username",
-      "Email",
-    ];
-    console.log("Hello " + contrib);
+    const renderedMarkdown = markdownTemplate(response);
+    writeToFile(title, renderedMarkdown);
+    // const descr = response.questionsDescr;
+    // const install = response.questionsInstall;
+    // const usage = response.questionsUsage;
+    // const license = response.questionsLicense;
+    // const contrib = response.questionsContribution;
+    // const testing = response.questionsTesting;
+    // const userName = response.questionsGithubUser;
+    // const email = response.questionsEmailAddress;
+    // const tableofContents = [
+    //   "Description",
+    //   "Installation",
+    //   "Usage",
+    //   "License",
+    //   "Contribution",
+    //   "Testing",
+    //   "GitHub Username",
+    //   "Email",
+    // ];
+    //console.log("Hello " + contrib);
   });
