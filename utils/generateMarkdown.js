@@ -14,22 +14,39 @@
 function generateMarkdown(response) {
   return `# ${response.title}
 
-  ## Table of Contents
-  
+## Table of Contents 
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
-- [License](#license)
 - [Questions](#questions)
 
 ## Description
 ${response.questionsDescr}
 
+## Installation
+${response.questionsInstall}
 
+## Usage
+${response.questionsUsage}
 
-`;
+## License
+${response.questionsLicense}
+
+## Contributing
+${response.questionsContribution}
+
+## Testing
+${response.questionsTesting}
+
+## Questions
+Questions? Feel free to get in touch:
+GitHub: https://github.com/${response.questionsGitHubUser}
+Email: ${response.questionsEmailAddress}
+
+`; //add direct email link???
 }
 
-//module.exports = generateMarkdown;
+module.exports = generateMarkdown;

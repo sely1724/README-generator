@@ -9,9 +9,8 @@ const questions = [
   "Choose a License",
   "Add Contribution Instructions",
   "Add Testing Instructions",
-  "What is your Github Username?", //might not need in array?
+  "What is your Github Username?",
   "What is your email address?",
-  //"Table of Contents", //Not Needed - Internally Write
 ];
 
 const fs = require("fs");
@@ -26,7 +25,7 @@ function writeToFile(title, renderedMarkdown) {
 }
 
 // TODO: Create a function to initialize app
-//function init() {}f
+//function init() {}
 
 // Function call to initialize app
 //init();
@@ -78,7 +77,7 @@ inquirer
     {
       type: "input",
       message: questions[7],
-      name: "questionsGithubUser",
+      name: "questionsGitHubUser",
     },
     {
       type: "input",
@@ -87,26 +86,7 @@ inquirer
     },
   ])
   .then((response) => {
-    const title = response.questionsTitle;
+    const title = response.questionsTitle + ".md";
     const renderedMarkdown = markdownTemplate(response);
     writeToFile(title, renderedMarkdown);
-    // const descr = response.questionsDescr;
-    // const install = response.questionsInstall;
-    // const usage = response.questionsUsage;
-    // const license = response.questionsLicense;
-    // const contrib = response.questionsContribution;
-    // const testing = response.questionsTesting;
-    // const userName = response.questionsGithubUser;
-    // const email = response.questionsEmailAddress;
-    // const tableofContents = [
-    //   "Description",
-    //   "Installation",
-    //   "Usage",
-    //   "License",
-    //   "Contribution",
-    //   "Testing",
-    //   "GitHub Username",
-    //   "Email",
-    // ];
-    //console.log("Hello " + contrib);
   });
