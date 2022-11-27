@@ -1,6 +1,6 @@
 # professional-readme-generator
 
-![ISC License](https://img.shields.io/badge/license-ISC-orange)
+![MIT](https://img.shields.io/badge/license-MIT-green)
 
 ## Link to Video Walkthrough
 
@@ -30,7 +30,7 @@ This application is built with developers in mind so that they can quickly gener
 
 ## License
 
-License used for this project: [ISC License](https://opensource.org/licenses/ISC)
+License used for this project: [MIT LICENSE](https://opensource.org/licenses/MIT)
 Please refer to the license section of my REPO if additional information is needed
 
 ## Contributing
