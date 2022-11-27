@@ -1,7 +1,8 @@
+//function renders the license chosens badge.  returns blank if none.
 function renderLicenseBadge(license) {
   if (license == "MIT License") {
     return `![${license}](https://img.shields.io/badge/license-MIT-green)`;
-  } else if (license === "ISC License") {
+  } else if (license == "ISC License") {
     return `![${license}](https://img.shields.io/badge/license-ISC-orange)`;
   } else if (license == "Apache License 2.0") {
     return `![${license}](https://img.shields.io/badge/license-Apache_2.0-blue)`;
@@ -11,7 +12,7 @@ function renderLicenseBadge(license) {
     return ``;
   }
 }
-
+//function renders the link to the user's chosen license.  returns blank if none.
 function renderLicenseLink(license) {
   if (license == "MIT License") {
     return `https://opensource.org/licenses/MIT`;
@@ -26,8 +27,7 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//function that returns the license section of README.  returns blank if none.
 function renderLicenseSection(license) {
   if (license) {
     return `License used for this project: [${license}](${renderLicenseLink(
@@ -36,9 +36,10 @@ function renderLicenseSection(license) {
   } else return ``;
 }
 
-// TODO: Create a function to generate markdown for README
+//function generates markdown template for README
 function generateMarkdown(response) {
-  return `# ${response.title}
+  return `
+  # ${response.questionsTitle}
 
   ${renderLicenseBadge(response.questionsLicense)}
 
@@ -76,5 +77,5 @@ Questions? Feel free to get in touch:
 
 `;
 }
-
+//export generateMarkdown function data.  will be pulled in by index.js
 module.exports = generateMarkdown;
