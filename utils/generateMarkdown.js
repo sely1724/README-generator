@@ -1,6 +1,18 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-//function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license == "MIT License") {
+    return `![${license}](https://img.shields.io/badge/license-MIT-green)`;
+  } else if (license === "ISC License") {
+    return `![${license}](https://img.shields.io/badge/license-MIT-green)`;
+  } else if (license == "Apache License 2.0") {
+    return `![${license}](https://img.shields.io/badge/license-MIT-green)`;
+  } else if (license == "GNU General Public License v3.0") {
+    return `![${license}](https://img.shields.io/badge/license-MIT-green)`;
+  } else {
+    return ``;
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -8,11 +20,15 @@
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-//function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  console.log(license);
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(response) {
   return `# ${response.title}
+
+  ${renderLicenseBadge(response.questionsLicense)}
 
 ## Table of Contents 
 - [Description](#description)
@@ -33,7 +49,7 @@ ${response.questionsInstall}
 ${response.questionsUsage}
 
 ## License
-${response.questionsLicense}
+${renderLicenseSection(response.questionsLicense)}
 
 ## Contributing
 ${response.questionsContribution}

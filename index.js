@@ -90,3 +90,5 @@ inquirer
     const renderedMarkdown = markdownTemplate(response);
     writeToFile(title, renderedMarkdown);
   });
+
+//figure out how to REQUIRE RESPONSE in node.
